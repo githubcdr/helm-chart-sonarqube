@@ -255,6 +255,8 @@ spec:
               value: {{ template "sonarqube.jvmOpts" . }}
             - name: SONAR_CE_JAVAOPTS
               value: {{ template "sonarqube.jvmCEOpts" . }}
+            - name: SONAR_WEB_CONTEXT
+              value: {{ include "sonarqube.webcontext" . }}
             - name: SONAR_JDBC_PASSWORD
               valueFrom:
                 secretKeyRef:
